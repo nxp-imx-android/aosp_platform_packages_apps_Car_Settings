@@ -56,7 +56,6 @@ public class BluetoothDetailFragment extends ListSettingsFragment implements
     private LocalBluetoothManager mLocalManager;
     private EditTextLineItem mInputLineItem;
     private TextView mOkButton;
-    private String mInput;
 
     public static BluetoothDetailFragment getInstance(BluetoothDevice btDevice) {
         BluetoothDetailFragment bluetoothDetailFragment = new BluetoothDetailFragment();
@@ -110,6 +109,7 @@ public class BluetoothDetailFragment extends ListSettingsFragment implements
         mInputLineItem = new EditTextLineItem(
                 getContext().getText(R.string.bluetooth_preference_paired_dialog_name_label),
                 mCachedDevice.getName());
+        mInputLineItem.setTextType(EditTextLineItem.TextType.TEXT);
         lineItems.add(mInputLineItem);
         lineItems.add(new SingleTextLineItem(getContext().getText(
                 R.string.bluetooth_device_advanced_profile_header_title)));
@@ -125,7 +125,7 @@ public class BluetoothDetailFragment extends ListSettingsFragment implements
     }
 
     private void setupForgetButton() {
-        TextView fortgetButton = (TextView) getActivity().findViewById(R.id.action_button2);
+        TextView fortgetButton = getActivity().findViewById(R.id.action_button2);
         fortgetButton.setVisibility(View.VISIBLE);
         fortgetButton.setText(R.string.forget);
         fortgetButton.setOnClickListener(v -> {
@@ -135,16 +135,12 @@ public class BluetoothDetailFragment extends ListSettingsFragment implements
     }
 
     private void setupOkButton() {
-        mOkButton = (TextView) getActivity().findViewById(R.id.action_button1);
+        mOkButton = getActivity().findViewById(R.id.action_button1);
         mOkButton.setText(R.string.okay);
-        // before the text gets changed, always set it in a disabled state.
-        mOkButton.setEnabled(false);
-        mInputLineItem.setTextChangeListener((s) -> {
-            mInput = s.toString();
-            mOkButton.setEnabled(!mInput.equals(mCachedDevice.getName()));
-        });
         mOkButton.setOnClickListener(v -> {
-            mCachedDevice.setName(mInput);
+            if (!mInputLineItem.getInput().equals(mCachedDevice.getName())) {
+                mCachedDevice.setName(mInputLineItem.getInput());
+            }
             mFragmentController.goBack();
         });
     }

@@ -37,22 +37,20 @@ import java.util.ArrayList;
 public class TypedPagedListAdapter
         extends RecyclerView.Adapter<ViewHolder>
         implements PagedListView.ItemCap {
-    private static final String TAG = "TypedPagedListAdapter";
 
     private final Context mContext;
-    private ArrayList<? extends LineItem> mContentList;
+    private ArrayList<LineItem> mContentList;
 
     public TypedPagedListAdapter(@NonNull Context context) {
         this(context, new ArrayList<>());
     }
 
-    public TypedPagedListAdapter(
-            @NonNull Context context, ArrayList<? extends LineItem> contentList) {
+    public TypedPagedListAdapter(@NonNull Context context, ArrayList<LineItem> contentList) {
         mContext = context;
         mContentList = contentList;
     }
 
-    public void updateList(ArrayList<? extends LineItem> contentList) {
+    public void updateList(ArrayList<LineItem> contentList) {
         mContentList = contentList;
         notifyDataSetChanged();
     }
@@ -70,7 +68,9 @@ public class TypedPagedListAdapter
                 ICON_TOGGLE_TYPE,
                 CHECKBOX_TYPE,
                 EDIT_TEXT_TYPE,
-                SINGLE_TEXT_TYPE})
+                SINGLE_TEXT_TYPE,
+                SPINNER_TYPE,
+                PASSWORD_TYPE})
         public @interface LineItemType {}
 
         // with one title and one description
@@ -96,6 +96,12 @@ public class TypedPagedListAdapter
 
         // with one title.
         static final int SINGLE_TEXT_TYPE = 8;
+
+        // with a spinner.
+        static final int SPINNER_TYPE = 9;
+
+        // with a password input window and a checkbox for show password or not.
+        static final int PASSWORD_TYPE = 10;
 
         @LineItemType
         abstract int getType();
@@ -144,6 +150,10 @@ public class TypedPagedListAdapter
                 return EditTextLineItem.createViewHolder(parent);
             case LineItem.SINGLE_TEXT_TYPE:
                 return SingleTextLineItem.createViewHolder(parent);
+            case LineItem.SPINNER_TYPE:
+                return SpinnerLineItem.createViewHolder(parent);
+            case LineItem.PASSWORD_TYPE:
+                return PasswordLineItem.createViewHolder(parent);
             default:
                 throw new IllegalStateException("ViewType not supported: " + viewType);
         }

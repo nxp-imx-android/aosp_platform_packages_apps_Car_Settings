@@ -16,9 +16,11 @@
   -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="true"
-          android:color="@color/car_body2" />
-    <item android:state_enabled="false"
-          android:alpha="0.5"
-          android:color="@color/car_body2" />
+
+    <item>
+        <layer-list>
+            <item android:gravity="right" android:drawable="@drawable/ic_arrow_drop_down" />
+        </layer-list>
+    </item>
+
 </selector>
