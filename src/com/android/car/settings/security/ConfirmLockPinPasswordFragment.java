@@ -19,15 +19,17 @@ package com.android.car.settings.security;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.support.annotation.VisibleForTesting;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.VisibleForTesting;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
@@ -50,16 +52,18 @@ public class ConfirmLockPinPasswordFragment extends BaseFragment {
 
     private int mUserId;
     private boolean mIsPin;
+    private boolean mIsInSetupWizard;
     private String mEnteredPassword;
 
     /**
      * Factory method for creating fragment in PIN mode.
      */
-    public static ConfirmLockPinPasswordFragment newPinInstance() {
+    public static ConfirmLockPinPasswordFragment newPinInstance(boolean isInSetupWizard) {
         ConfirmLockPinPasswordFragment patternFragment = new ConfirmLockPinPasswordFragment();
         Bundle bundle = BaseFragment.getBundle();
         bundle.putInt(EXTRA_TITLE_ID, R.string.security_settings_title);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
+        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, isInSetupWizard
+                ? R.layout.suw_action_bar_with_button : R.layout.action_bar_with_button);
         bundle.putInt(EXTRA_LAYOUT, R.layout.confirm_lock_pin_fragment);
         bundle.putBoolean(EXTRA_IS_PIN, true);
         patternFragment.setArguments(bundle);
@@ -69,11 +73,12 @@ public class ConfirmLockPinPasswordFragment extends BaseFragment {
     /**
      * Factory method for creating fragment in password mode.
      */
-    public static ConfirmLockPinPasswordFragment newPasswordInstance() {
+    public static ConfirmLockPinPasswordFragment newPasswordInstance(boolean isInSetupWizard) {
         ConfirmLockPinPasswordFragment patternFragment = new ConfirmLockPinPasswordFragment();
         Bundle bundle = BaseFragment.getBundle();
         bundle.putInt(EXTRA_TITLE_ID, R.string.security_settings_title);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
+        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, isInSetupWizard
+                ? R.layout.suw_action_bar_with_button : R.layout.action_bar_with_button);
         bundle.putInt(EXTRA_LAYOUT, R.layout.confirm_lock_password_fragment);
         bundle.putBoolean(EXTRA_IS_PIN, false);
         patternFragment.setArguments(bundle);
@@ -96,6 +101,7 @@ public class ConfirmLockPinPasswordFragment extends BaseFragment {
         mUserId = UserHandle.myUserId();
         Bundle args = getArguments();
         if (args != null) {
+            mIsInSetupWizard = args.getBoolean(BaseFragment.EXTRA_RUNNING_IN_SETUP_WIZARD);
             mIsPin = args.getBoolean(EXTRA_IS_PIN);
         }
     }
@@ -117,6 +123,25 @@ public class ConfirmLockPinPasswordFragment extends BaseFragment {
             mCheckLockWorker = (CheckLockWorker) getFragmentManager().findFragmentByTag(
                     FRAGMENT_TAG_CHECK_LOCK_WORKER);
         }
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        if (!mIsInSetupWizard) {
+            return;
+        }
+
+        // Don't show toolbar title in Setup Wizard.
+        ((TextView) getActivity().findViewById(R.id.title)).setText("");
+
+        Button mPrimaryButton = (Button) getActivity().findViewById(R.id.action_button1);
+        mPrimaryButton.setText(R.string.lockscreen_skip_button_text);
+        mPrimaryButton.setOnClickListener(v -> {
+            SetupWizardScreenLockActivity activity = (SetupWizardScreenLockActivity) getActivity();
+            activity.onCancel();
+        });
     }
 
     @Override
@@ -149,7 +174,6 @@ public class ConfirmLockPinPasswordFragment extends BaseFragment {
 
     private void initPinView(View view) {
         mPinPad = (PinPadView) view.findViewById(R.id.pin_pad);
-        mPinPad.setEnterKeyIcon(R.drawable.ic_done);
 
         PinPadView.PinPadClickListener pinPadClickListener = new PinPadView.PinPadClickListener() {
             @Override
@@ -240,7 +264,9 @@ public class ConfirmLockPinPasswordFragment extends BaseFragment {
         } else {
             mMsgView.setText(
                     mIsPin ? R.string.lockscreen_wrong_pin : R.string.lockscreen_wrong_password);
-            mPinPad.setEnabled(true);
+            if (mIsPin) {
+                mPinPad.setEnabled(true);
+            }
         }
 
         if (!mIsPin) {

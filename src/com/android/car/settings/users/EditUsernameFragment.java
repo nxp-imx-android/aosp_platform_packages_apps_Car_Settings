@@ -19,14 +19,14 @@ import android.car.user.CarUserManagerHelper;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.VisibleForTesting;
-import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.widget.Button;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
 import com.android.car.settingslib.util.SettingsConstants;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * Enables user to edit their username.
@@ -38,9 +38,7 @@ public class EditUsernameFragment extends BaseFragment {
     private TextInputEditText mUserNameEditText;
     private Button mOkButton;
     private Button mCancelButton;
-
-    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    CarUserManagerHelper mCarUserManagerHelper;
+    private CarUserManagerHelper mCarUserManagerHelper;
 
     /**
      * Creates instance of EditUsernameFragment.
@@ -71,18 +69,11 @@ public class EditUsernameFragment extends BaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        createCarUserManagerHelper();
+        mCarUserManagerHelper = new CarUserManagerHelper(getContext());
 
         configureUsernameEditing();
         showOkButton();
         showCancelButton();
-    }
-
-    private void createCarUserManagerHelper() {
-        // Null check for testing. Don't want to override it if already set by a test.
-        if (mCarUserManagerHelper == null) {
-            mCarUserManagerHelper = new CarUserManagerHelper(getContext());
-        }
     }
 
     private void configureUsernameEditing() {
