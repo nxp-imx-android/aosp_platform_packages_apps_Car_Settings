@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,27 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.common;
+package com.android.car.settings.applications.managedomainurls;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 
 import androidx.preference.Preference;
 
-/**
- * Concrete implementation of {@link PreferenceController} which allows for applying the default
- * {@link #getAvailabilityStatus()} and {@link #onApplyUxRestrictions(CarUxRestrictions)}
- * behavior to preferences which do not require additional controller logic.
- */
-public final class DefaultRestrictionsPreferenceController extends
-        PreferenceController<Preference> {
+import com.android.car.settings.applications.ApplicationPreferenceController;
+import com.android.car.settings.common.FragmentController;
 
-    public DefaultRestrictionsPreferenceController(Context context, String preferenceKey,
+/** In addition to showing the app name and icon, shows the app version in the summary. */
+public class ApplicationWithVersionPreferenceController extends ApplicationPreferenceController {
+
+    public ApplicationWithVersionPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
     }
 
     @Override
-    protected Class<Preference> getPreferenceType() {
-        return Preference.class;
+    protected void updateState(Preference preference) {
+        super.updateState(preference);
+        preference.setSummary(getAppVersion());
     }
 }
