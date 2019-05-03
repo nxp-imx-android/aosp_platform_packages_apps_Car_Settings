@@ -15,11 +15,12 @@
  */
 package com.android.car.settings.testutils;
 
+import static android.content.pm.PackageManager.INTENT_FILTER_DOMAIN_VERIFICATION_STATUS_UNDEFINED;
+
 import android.annotation.NonNull;
 import android.annotation.UserIdInt;
 import android.app.ApplicationPackageManager;
 import android.content.ComponentName;
-import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageDataObserver;
@@ -30,6 +31,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
+import android.util.Pair;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
@@ -46,7 +48,6 @@ import java.util.Map;
 public class ShadowApplicationPackageManager extends
         org.robolectric.shadows.ShadowApplicationPackageManager {
 
-    private static List<ResolveInfo> sResolveInfos = null;
     private static Resources sResources = null;
     private static PackageManager sPackageManager;
 
@@ -54,12 +55,13 @@ public class ShadowApplicationPackageManager extends
     private final Map<String, ComponentName> mPkgToDefaultActivityMap = new HashMap<>();
     private final Map<String, IntentFilter> mPkgToDefaultActivityIntentFilterMap = new HashMap<>();
     private final Map<IntentFilter, ComponentName> mPreferredActivities = new LinkedHashMap<>();
+    private final Map<Pair<String, Integer>, Integer> mPkgAndUserIdToIntentVerificationStatusMap =
+            new HashMap<>();
     private List<ResolveInfo> mHomeActivities = Collections.emptyList();
     private ComponentName mDefaultHomeActivity;
 
     @Resetter
     public static void reset() {
-        sResolveInfos = null;
         sResources = null;
         sPackageManager = null;
     }
@@ -102,12 +104,6 @@ public class ShadowApplicationPackageManager extends
     @Implementation
     protected List<ApplicationInfo> getInstalledApplicationsAsUser(int flags, int userId) {
         return getInstalledApplications(flags);
-    }
-
-    @Implementation
-    protected List<ResolveInfo> queryIntentActivitiesAsUser(Intent intent,
-            @PackageManager.ResolveInfoFlags int flags, @UserIdInt int userId) {
-        return sResolveInfos == null ? Collections.emptyList() : sResolveInfos;
     }
 
     @Implementation
@@ -167,21 +163,29 @@ public class ShadowApplicationPackageManager extends
         return true;
     }
 
+    @Implementation
+    @Override
+    protected int getIntentVerificationStatusAsUser(String packageName, int userId) {
+        Pair<String, Integer> key = new Pair<>(packageName, userId);
+        return mPkgAndUserIdToIntentVerificationStatusMap.getOrDefault(key,
+                INTENT_FILTER_DOMAIN_VERIFICATION_STATUS_UNDEFINED);
+    }
+
+    @Implementation
+    @Override
+    protected boolean updateIntentVerificationStatusAsUser(String packageName, int status,
+            int userId) {
+        Pair<String, Integer> key = new Pair<>(packageName, userId);
+        mPkgAndUserIdToIntentVerificationStatusMap.put(key, status);
+        return true;
+    }
+
     public void setHomeActivities(List<ResolveInfo> homeActivities) {
         mHomeActivities = homeActivities;
     }
 
     public void setDefaultHomeActivity(ComponentName defaultHomeActivity) {
         mDefaultHomeActivity = defaultHomeActivity;
-    }
-
-    /**
-     * If resolveInfos are set by this method then
-     * {@link ShadowApplicationPackageManager#queryIntentActivitiesAsUser}
-     * method will return the same list.
-     */
-    public static void setListOfActivities(List<ResolveInfo> resolveInfos) {
-        sResolveInfos = resolveInfos;
     }
 
     public static void setResources(Resources resources) {
