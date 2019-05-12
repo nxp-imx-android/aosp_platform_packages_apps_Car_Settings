@@ -29,9 +29,7 @@ import com.android.car.settings.accounts.AccountSettingsFragment;
 import com.android.car.settings.accounts.ChooseAccountFragment;
 import com.android.car.settings.applications.ApplicationDetailsFragment;
 import com.android.car.settings.applications.ApplicationsSettingsFragment;
-import com.android.car.settings.applications.assist.ManageAssistFragment;
 import com.android.car.settings.applications.defaultapps.DefaultAutofillPickerFragment;
-import com.android.car.settings.applications.managedomainurls.ManageDomainUrlsFragment;
 import com.android.car.settings.applications.specialaccess.NotificationAccessFragment;
 import com.android.car.settings.bluetooth.BluetoothSettingsFragment;
 import com.android.car.settings.datausage.DataUsageFragment;
@@ -41,7 +39,6 @@ import com.android.car.settings.home.HomepageFragment;
 import com.android.car.settings.inputmethod.KeyboardFragment;
 import com.android.car.settings.language.LanguagePickerFragment;
 import com.android.car.settings.location.LocationScanningFragment;
-import com.android.car.settings.location.LocationSettingsFragment;
 import com.android.car.settings.network.MobileNetworkFragment;
 import com.android.car.settings.quicksettings.QuickSettingFragment;
 import com.android.car.settings.sound.SoundSettingsFragment;
@@ -108,9 +105,6 @@ public class FragmentResolver {
             case Settings.ACTION_BLUETOOTH_SETTINGS:
                 return new BluetoothSettingsFragment();
 
-            case Settings.ACTION_LOCATION_SOURCE_SETTINGS:
-                return new LocationSettingsFragment();
-
             case Settings.ACTION_LOCATION_SCANNING_SETTINGS:
                 return new LocationScanningFragment();
 
@@ -134,12 +128,6 @@ public class FragmentResolver {
                     pkg = uri.getSchemeSpecificPart();
                 }
                 return ApplicationDetailsFragment.getInstance(pkg);
-
-            case Settings.ACTION_VOICE_INPUT_SETTINGS:
-                return new ManageAssistFragment();
-
-            case Settings.ACTION_MANAGE_DOMAIN_URLS:
-                return new ManageDomainUrlsFragment();
 
             case Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS:
                 return new NotificationAccessFragment();

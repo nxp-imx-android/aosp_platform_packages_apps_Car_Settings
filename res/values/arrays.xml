@@ -15,11 +15,16 @@
     limitations under the License.
 -->
 
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/assist_app_settings">
-    <com.android.car.settings.common.LogicalPreferenceGroup
-        android:key="@string/pk_default_assist_and_voice_options"
-        settings:controller="com.android.car.settings.applications.defaultapps.DefaultAssistantPickerPreferenceController"/>
-</PreferenceScreen>
+<resources>
+
+    <!-- Values for premium SMS permission selector [CHAR LIMIT=30] -->
+    <string-array name="premium_sms_access_values">
+        <!-- Ask user before sending to premium SMS short code. -->
+        <item>Ask</item>
+        <!-- Never allow app to send to premium SMS short code. -->
+        <item>Never allow</item>
+        <!-- Always allow app to send to premium SMS short code. -->
+        <item>Always allow</item>
+    </string-array>
+
+</resources>

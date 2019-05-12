@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.applications.defaultapps;
+package com.android.car.settings.applications.assist;
 
-import androidx.annotation.XmlRes;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-import com.android.car.settings.R;
-import com.android.car.settings.common.SettingsFragment;
+import com.android.car.settings.common.BaseCarSettingsActivity;
 
-/** Shows the option to choose the default assistant. */
-public class DefaultAssistantPickerFragment extends SettingsFragment {
+/**
+ * Starts {@link ManageAssistFragment} in a separate activity to help with the back navigation
+ * flow. This setting differs from the other settings in that the user arrives here from the
+ * PermissionController rather than from within the Settings app itself.
+ */
+public class ManageAssistActivity extends BaseCarSettingsActivity {
 
+    @Nullable
     @Override
-    @XmlRes
-    protected int getPreferenceScreenResId() {
-        return R.xml.default_assistant_picker_fragment;
+    protected Fragment getInitialFragment() {
+        return new ManageAssistFragment();
     }
 }
