@@ -29,10 +29,14 @@ import android.os.UserManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.Guideline;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.car.settings.R;
@@ -42,6 +46,9 @@ import com.android.car.settings.home.HomepageFragment;
 import com.android.car.settings.users.UserIconProvider;
 import com.android.car.settings.users.UserSwitcherFragment;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -50,6 +57,17 @@ import java.util.concurrent.TimeUnit;
 public class QuickSettingFragment extends BaseFragment {
     // Time to delay refreshing the build info, if the clock is not correct.
     private static final long BUILD_INFO_REFRESH_TIME_MS = TimeUnit.SECONDS.toMillis(5);
+    /**
+     * Indicates whether all Preferences are configured to ignore UX Restrictions Event.
+     */
+    private boolean mAllIgnoresUxRestrictions;
+
+    /**
+     * Set of the keys of Preferences that ignore UX Restrictions. When mAlwaysIgnoreUxRestrictions
+     * is configured to be false, then only the Preferences whose keys are contained in this Set
+     * ignore UX Restrictions.
+     */
+    private Set<String> mPreferencesIgnoringUxRestrictions;
 
     private CarUserManagerHelper mCarUserManagerHelper;
     private UserIconProvider mUserIconProvider;
@@ -79,6 +97,17 @@ public class QuickSettingFragment extends BaseFragment {
         super.onActivityCreated(savedInstanceState);
         mHomeFragmentLauncher = new HomeFragmentLauncher();
         Activity activity = requireActivity();
+
+        FragmentManager fragmentManager = ((FragmentActivity) activity).getSupportFragmentManager();
+        if (fragmentManager.getBackStackEntryCount() == 1
+                && fragmentManager.findFragmentByTag("0") != null
+                && fragmentManager.findFragmentByTag("0").getClass().getName().equals(
+                getString(R.string.config_settings_hierarchy_root_fragment))
+                && !getContext().getResources()
+                .getBoolean(R.bool.config_show_settings_root_exit_icon)) {
+            hideExitIcon();
+        }
+
         activity.findViewById(R.id.action_bar_icon_container).setOnClickListener(
                 v -> activity.finish());
 
@@ -108,6 +137,11 @@ public class QuickSettingFragment extends BaseFragment {
                 .addTile(new CelluarTile(activity, mGridAdapter))
                 .addSeekbarTile(new BrightnessTile(activity));
         mListView.setAdapter(mGridAdapter);
+
+        mPreferencesIgnoringUxRestrictions = new HashSet<String>(Arrays.asList(
+                getContext().getResources().getStringArray(R.array.config_ignore_ux_restrictions)));
+        mAllIgnoresUxRestrictions =
+                getContext().getResources().getBoolean(R.bool.config_always_ignore_ux_restrictions);
     }
 
     @Override
@@ -186,7 +220,10 @@ public class QuickSettingFragment extends BaseFragment {
     @Override
     public void onUxRestrictionsChanged(CarUxRestrictions restrictionInfo) {
         // TODO: update tiles
-        applyRestriction(CarUxRestrictionsHelper.isNoSetup(restrictionInfo));
+        if (!hasPreferenceIgnoringUxRestrictions(mAllIgnoresUxRestrictions,
+                mPreferencesIgnoringUxRestrictions)) {
+            applyRestriction(CarUxRestrictionsHelper.isNoSetup(restrictionInfo));
+        }
     }
 
     private void applyRestriction(boolean restricted) {
@@ -209,5 +246,18 @@ public class QuickSettingFragment extends BaseFragment {
                 getFragmentController().launchFragment(new HomepageFragment());
             }
         }
+    }
+
+    private boolean hasPreferenceIgnoringUxRestrictions(boolean allIgnores, Set prefsThatIgnore) {
+        return allIgnores || prefsThatIgnore.size() > 0;
+    }
+
+    private void hideExitIcon() {
+        requireActivity().findViewById(R.id.action_bar_icon_container)
+                .setVisibility(FrameLayout.GONE);
+
+        Guideline guideLine = (Guideline) requireActivity().findViewById(R.id.start_margin);
+        guideLine.setGuidelineBegin(getResources()
+                .getDimensionPixelOffset(R.dimen.action_bar_no_icon_start_margin));
     }
 }
