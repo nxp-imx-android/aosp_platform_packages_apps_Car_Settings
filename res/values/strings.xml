@@ -362,6 +362,8 @@
     <string name="bluetooth_notif_title">Pairing request</string>
     <!-- Notification message when a Bluetooth device wants to pair with us -->
     <string name="bluetooth_notif_message">Tap to pair with <xliff:g id="device_name">%1$s</xliff:g>.</string>
+    <!-- Title for page which supports selecting a Bluetooth device from other applications. [CHAR_LIMIT=40]-->
+    <string name="bluetooth_device_picker">Choose Bluetooth device</string>
 
     <!-- Language settings screen heading. [CHAR LIMIT=30] -->
     <string name="language_settings">Languages</string>
@@ -459,6 +461,8 @@
         <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> additional permission</item>
         <item quantity="other"><xliff:g example="10" id="count">%d</xliff:g> additional permissions</item>
     </plurals>
+    <!-- Dialog body explaining that the app just selected by the user will not work after a reboot until after the user enters their credentials, such as a PIN or password. [CHAR LIMIT=NONE] -->
+    <string name="direct_boot_unaware_dialog_message_car">Note: After a reboot, this app can\'t start until you unlock your vehicle.</string>
     <!-- Assistant and voice input settings title. This setting goes into the manage assistant settings page. [CHAR LIMIT=40] -->
     <string name="assist_and_voice_input_settings">Assist &amp; voice input</string>
     <!-- Default assistant settings title. This setting allows users to select the default assistant for the device. [CHAR LIMIT=40] -->
@@ -558,6 +562,8 @@
     <string name="wifi_control_title">Wi-Fi control</string>
     <!-- Description of the change wifi state permission. [CHAR_LIMIT=NONE] -->
     <string name="wifi_control_description">Wi-Fi control allows an app to turn Wi-Fi on or off, scan and connect to Wi-Fi networks, add or remove networks, or start a local-only hotspot.</string>
+    <!-- Title for item that when selected will launch into additional special access settings. [CHAR_LIMIT=30] -->
+    <string name="more_special_access_title">More</string>
 
     <!-- Location --><skip/>
     <!-- Main setting menu item to go into location settings [CHAR LIMIT=40] -->
