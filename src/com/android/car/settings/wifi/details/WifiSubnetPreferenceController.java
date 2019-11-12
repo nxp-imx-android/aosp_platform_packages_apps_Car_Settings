@@ -46,6 +46,10 @@ public class WifiSubnetPreferenceController extends
     protected void updateState(WifiDetailsPreference preference) {
         String subnet = null;
 
+        if (getWifiInfoProvider().getLinkProperties() == null) {
+            return;
+        }
+
         for (LinkAddress addr : getWifiInfoProvider().getLinkProperties().getLinkAddresses()) {
             if (addr.getAddress() instanceof Inet4Address) {
                 subnet = ipv4PrefixLengthToSubnetMask(addr.getPrefixLength());

@@ -43,6 +43,10 @@ public class WifiIpAddressPreferenceController extends
     protected void updateState(WifiDetailsPreference preference) {
         String ipv4Address = null;
 
+        if (getWifiInfoProvider().getLinkProperties() == null) {
+            return;
+        }
+
         for (LinkAddress addr : getWifiInfoProvider().getLinkProperties().getLinkAddresses()) {
             if (addr.getAddress() instanceof Inet4Address) {
                 ipv4Address = addr.getAddress().getHostAddress();
