@@ -41,6 +41,10 @@ public class WifiDnsPreferenceController extends
 
     @Override
     protected void updateState(WifiDetailsPreference preference) {
+        if (getWifiInfoProvider().getLinkProperties() == null) {
+            return;
+        }
+
         String dnsServers = getWifiInfoProvider().getLinkProperties().getDnsServers().stream()
                 .map(InetAddress::getHostAddress)
                 .collect(Collectors.joining(System.lineSeparator()));
