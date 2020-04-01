@@ -283,9 +283,11 @@
     <string name="not_installed" msgid="4218816013370552746">"Ez dago instalatuta erabiltzaile honentzat"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Baimenak"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Jakinarazpenak"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"Memoria eta cachea"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Bertsioa: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Ez du baimenik"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"Ez du eskatu baimenik"</string>
+    <string name="storage_type_internal" msgid="8918688427078709570">"%s barneko memorian"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Datuen erabilera"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Aplik. datuen erabilera"</string>
     <string name="computing_size" msgid="5791407621793083965">"Kalkulatzen…"</string>
@@ -329,8 +331,8 @@
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Baimen honekin, sistemaren ezarpenak alda ditzakete aplikazioek."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Jakinarazpenetarako sarbidea"</string>
     <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"<xliff:g id="SERVICE">%1$s</xliff:g> zerbitzuari jakinarazpenetarako sarbidea eman nahi diozu?"</string>
-    <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> aplikazioak jakinarazpen guztiak irakurri ahal izango ditu, informazio pertsonala (adibidez, kontaktuen izenak eta jasotako testu-mezuak) dutenak barne. Horrez gain, jakinarazpenak baztertu eta haietako ekintza-botoiak abiarazi ahal izango ditu.\n\nGainera, Ez molestatu modua aktibatzeko eta desaktibatzeko aukera izango du aplikazioak, baita horrekin erlazionatutako ezarpenak aldatzekoa ere."</string>
-    <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> aplikazioari jakinarazpenak atzitzeko aukera desaktibatzen badiozu, baliteke Ez molestatu modurako sarbidea era desaktibatzea."</string>
+    <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> aplikazioak jakinarazpen guztiak irakurri ahal izango ditu, informazio pertsonala (adibidez, kontaktuen izenak eta jasotako testu-mezuak) dutenak barne. Horrez gain, jakinarazpenak baztertu eta haietako ekintza-botoiak abiarazi ahal izango ditu.\n\nGainera, ez molestatzeko modua aktibatzeko eta desaktibatzeko aukera izango du aplikazioak, baita horrekin erlazionatutako ezarpenak aldatzekoa ere."</string>
+    <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> aplikazioari jakinarazpenak atzitzeko aukera desaktibatzen badiozu, baliteke ez molestatzeko modurako sarbidea era desaktibatzea."</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Desaktibatu"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Utzi"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"Premium SMSetarako sarbidea"</string>
@@ -338,7 +340,7 @@
     <string name="usage_access_title" msgid="7153427122072303254">"Erabilera-datuetarako sarbidea"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Erabilera-datuek zer beste aplikazio eta zer maiztasunekin erabiltzen dituzun jakiteko baimena ematen die aplikazioei, baita zer operadore duzun, zer hizkuntza-ezarpen dituzun eta beste xehetasun batzuk ere."</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Wifi-konexioa kontrolatzea"</string>
-    <string name="wifi_control_description" msgid="6021926850423169261">"Wifia kontrolatzeko baimenarekin, aplikazioak hauek egin ditzake: wifi-konexioa aktibatu edo desaktibatu, wifi-sareak bilatu eta haietara konektatu, sareak gehitu edo kendu, edota sare publiko lokalak sortu."</string>
+    <string name="wifi_control_description" msgid="6021926850423169261">"Wifi-konexioa kontrolatzeko aukerarekin, aplikazioak hauek egin ditzake: wifi-konexioa aktibatu edo desaktibatu, wifi-sareak bilatu eta haietara konektatu, sareak gehitu edo kendu, edota sare publiko lokalak sortu."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Gehiago"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Kokapena"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Azken kokapen-eskaerak"</string>
@@ -506,7 +508,7 @@
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Sinkronizatu datuak automatikoki"</string>
     <string name="account_auto_sync_summary" msgid="6963837893148304128">"Utzi aplikazioei datuak automatikoki freskatzen"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="6027487764261344033">"Sinkronizazio automatikoa aktibatu nahi duzu?"</string>
-    <string name="data_usage_auto_sync_on_dialog" msgid="2770233931307606956">"Kontuei sarean egiten dizkiezun aldaketa guztiak automatikoki kopiatuko dira gailuan.\n\nHorrez gain, baliteke kontu batzuek sarean kopiatzea telefonoan egiten dituzun aldaketak. Google kontuek horrela funtzionatzen dute."</string>
+    <string name="data_usage_auto_sync_on_dialog" msgid="2770233931307606956">"Kontuei sarean egiten dizkiezun aldaketa guztiak automatikoki kopiatuko dira gailuan.\n\nHorrez gain, baliteke kontu batzuek sarean kopiatzea telefonoan egiten dituzun aldaketak. Google-ko kontuek horrela funtzionatzen dute."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="1235955038330202536">"Sinkronizazio automatikoa desaktibatu nahi duzu?"</string>
     <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"Datuak aurrezten lagunduko dizu, baina kontu bakoitza eskuz sinkronizatu beharko duzu informazio berriena biltzeko. Gainera, ez duzu jasoko berritasunen jakinarazpenik."</string>
     <string name="account_details_title" msgid="7529571432258448573">"Kontuaren informazioa"</string>
@@ -518,8 +520,8 @@
     <string name="really_remove_account_message" msgid="4296769280849579900">"Kontua kentzen baduzu, bertako mezu, kontaktu eta bestelako datu guztiak ezabatuko dira gailutik."</string>
     <string name="remove_account_error_title" msgid="8368044943174826635">"Ezin izan da kendu kontua."</string>
     <string name="account_sync_title" msgid="6541844336300236915">"Kontuaren sinkronizazioa"</string>
-    <string name="account_sync_summary_some_on" msgid="4525960296068027182">"<xliff:g id="ID_1">%1$d</xliff:g>/<xliff:g id="ID_2">%2$d</xliff:g> elementuk aktibatuta dute sinkronizazioa"</string>
-    <string name="account_sync_summary_all_on" msgid="3652264471870312725">"Elementu guztiek aktibatuta dute sinkronizazioa"</string>
+    <string name="account_sync_summary_some_on" msgid="4525960296068027182">"<xliff:g id="ID_1">%1$d</xliff:g>/<xliff:g id="ID_2">%2$d</xliff:g> elementuk aktibatuta daukate sinkronizazioa"</string>
+    <string name="account_sync_summary_all_on" msgid="3652264471870312725">"Elementu guztiek aktibatuta daukate sinkronizazioa"</string>
     <string name="account_sync_summary_all_off" msgid="6550959714035312414">"Elementu guztiek desaktibatuta dute sinkronizazioa"</string>
     <string name="sync_disabled" msgid="393531064334628258">"Sinkroniz. DESAKTIBATUTA"</string>
     <string name="sync_error" msgid="6698021343089247914">"Sinkronizazio-errorea"</string>

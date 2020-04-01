@@ -287,9 +287,11 @@
     <string name="not_installed" msgid="4218816013370552746">"Pro tohoto uživatele nenainstalováno"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Oprávnění"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Oznámení"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"Úložiště a mezipaměť"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Verze: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Nebyla udělena žádná oprávnění"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"Nevyžaduje žádná oprávnění"</string>
+    <string name="storage_type_internal" msgid="8918688427078709570">"%s v interním úložišti"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Využití dat"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Využití dat aplikací"</string>
     <string name="computing_size" msgid="5791407621793083965">"Probíhá výpočet…"</string>
@@ -328,7 +330,7 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Pokaždé se zeptat"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Neotevírat v této aplikaci"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Podporované odkazy"</string>
-    <string name="special_access" msgid="5730278220917123811">"Přístup ke speciálním aplikacím"</string>
+    <string name="special_access" msgid="5730278220917123811">"Zvláštní přístup aplikací"</string>
     <string name="show_system" msgid="4401355756969485287">"Zobrazit systémové aplikace"</string>
     <string name="hide_system" msgid="8845453295584638040">"Skrýt systémové aplikace"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Změny nastavení systému"</string>

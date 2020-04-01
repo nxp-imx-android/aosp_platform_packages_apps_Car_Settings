@@ -21,7 +21,7 @@
     <string name="more_settings_label" msgid="3867559443480110616">"আরও"</string>
     <string name="display_settings" msgid="5325515247739279185">"ডিসপ্লে"</string>
     <string name="brightness" msgid="2919605130898772866">"উজ্জ্বলতার স্তর"</string>
-    <string name="auto_brightness_title" msgid="9124647862844666581">"পরিবেশের আলো অনুসারে উজ্জ্বলতা"</string>
+    <string name="auto_brightness_title" msgid="9124647862844666581">"অভিযোজিত উজ্জ্বলতা"</string>
     <string name="auto_brightness_summary" msgid="4741887033140384352">"উপলভ্য আলোর পরিপ্রেক্ষিতে উজ্জ্বলতার স্তর অপ্টিমাইজ করুন"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"নাইট লাইট চালু আছে"</string>
     <string name="keywords_display" msgid="3978416985146943922">"স্ক্রিন, টাচস্ক্রিন"</string>
@@ -283,9 +283,11 @@
     <string name="not_installed" msgid="4218816013370552746">"এই ব্যবহারকারীর জন্য ইনস্টল করা নেই"</string>
     <string name="permissions_label" msgid="2701446753515612685">"অনুমতিগুলি"</string>
     <string name="notifications_label" msgid="6586089149665170731">"বিজ্ঞপ্তি"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"স্টোরেজ ও ক্যাশে"</string>
     <string name="application_version_label" msgid="8556889839783311649">"ভার্সন: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"কোনও অনুমতি দেওয়া হয় নি"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"কোনও অনুমতির অনুরোধ জানানো হয়নি"</string>
+    <string name="storage_type_internal" msgid="8918688427078709570">"ইন্টারনাল স্টোরেজে %s রয়েছে"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ডেটা ব্যবহার"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"অ্যাপ ডেটার ব্যবহার"</string>
     <string name="computing_size" msgid="5791407621793083965">"কম্পিউটিং..."</string>

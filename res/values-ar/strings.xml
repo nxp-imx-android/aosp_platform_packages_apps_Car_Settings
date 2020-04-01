@@ -291,9 +291,11 @@
     <string name="not_installed" msgid="4218816013370552746">"لم يتم تثبيت التطبيق لهذا المستخدم."</string>
     <string name="permissions_label" msgid="2701446753515612685">"الأذونات"</string>
     <string name="notifications_label" msgid="6586089149665170731">"الإشعارات"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"التخزين وذاكرة التخزين المؤقت"</string>
     <string name="application_version_label" msgid="8556889839783311649">"الإصدار: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"لم يتم منح أي أذونات."</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"لم يتم طلب أي أذونات."</string>
+    <string name="storage_type_internal" msgid="8918688427078709570">"وحدة التخزين الداخلية %s"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"استخدام البيانات"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"استخدام بيانات التطبيق"</string>
     <string name="computing_size" msgid="5791407621793083965">"جارٍ الحساب…"</string>
@@ -347,7 +349,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"إلغاء"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"إمكانية إرسال رسائل قصيرة SMS مميزة"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"يمكن أن تكلفك الرسائل القصيرة SMS المميزة بعض الرسوم، وستتم إضافة هذه الرسوم إلى فواتير مشغِّل شبكة الجوّال. وفي حال تفعيل الإذن لأحد التطبيقات، ستتمكن من إرسال رسائل قصيرة SMS مميزة باستخدام هذا التطبيق."</string>
-    <string name="usage_access_title" msgid="7153427122072303254">"الدخول إلى بيانات الاستخدام"</string>
+    <string name="usage_access_title" msgid="7153427122072303254">"الوصول إلى بيانات الاستخدام"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"يتيح الدخول إلى بيانات الاستخدام للتطبيق إمكانية تتبُّع التطبيقات الأخرى التي تستخدمها ومدى تكرار استخدامها ومشغّل شبكة الجوّال وإعدادات اللغة وغيرها من التفاصيل."</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"التحكّم في شبكة Wi-Fi"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"يسمح التحكم في شبكة Wi-Fi للتطبيق بتفعيل شبكات Wi-Fi أو إيقافها أو البحث عنها أو الاتصال بها أو إضافتها أو إزالتها أو بدء نقطة اتصال محلية فقط."</string>
@@ -679,7 +681,7 @@
     <string name="trusted_device_confirm_button" msgid="102354635014627996">"تأكيد"</string>
     <string name="trusted_device_remove_button" msgid="6140476996063415420">"إزالة الجهاز الموثوق به"</string>
     <string name="trusted_device_done_button" msgid="8481956533222625296">"تم"</string>
-    <string name="add_trusted_device_instruction" msgid="2280382609884918033">"استخدِم التطبيق المصاحب لإعداد جهاز موثوق به. بعد إعداد الجهاز، يتم إلغاء قفل الملف الشخصي للمستخدم تلقائيًا عند رصد هاتفك بالقرب من المركبة."</string>
+    <string name="add_trusted_device_instruction" msgid="2280382609884918033">"استخدِم التطبيق المصاحب لإعداد جهاز موثوق به. بعد إعداد الجهاز، يتم فتح قفل الملف الشخصي للمستخدم تلقائيًا عند رصد هاتفك بالقرب من المركبة."</string>
     <string name="trusted_device_download_app" msgid="6971096140154499983">"1. تنزيل التطبيق المصاحب على هاتفك"</string>
     <string name="trusted_device_select_device" msgid="198902765179270739">"2. اختيار <xliff:g id="CAR_NAME">%1$s</xliff:g> على هاتفك لإقران الأجهزة"</string>
     <string name="trusted_device_safety_alert" msgid="3834898922112046769">"يمكن لجهاز موثوق به قريب من سيارتك أن يلغي قفل الملف الشخصي للمستخدم عند تشغيل محركها، حتى وإن كان شخص غيرك يحمل الجهاز."</string>

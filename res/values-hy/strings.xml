@@ -283,9 +283,11 @@
     <string name="not_installed" msgid="4218816013370552746">"Տեղադրված չէ այս օգտատիրոջ համար"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Թույլտվություններ"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Ծանուցումներ"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"Հիշողություն և քեշ"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Տարբերակ՝ %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Թույլտվություններ չեն տրվել"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"Թույլտվությունների հարցում չի արվել"</string>
+    <string name="storage_type_internal" msgid="8918688427078709570">"%s տարածք ներքին հիշողությունում"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Թրաֆիկի օգտագործում"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Հավելվածի թրաֆիկ"</string>
     <string name="computing_size" msgid="5791407621793083965">"Հաշվարկում…"</string>
@@ -353,7 +355,7 @@
     <string name="system_setting_title" msgid="6864599341809463440">"Համակարգ"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Համակարգի թարմացումներ"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android-ի տարբերակը"</string>
-    <string name="security_patch" msgid="4794276590178386903">"Android-ի խոցելիության շտկման մակարդակը"</string>
+    <string name="security_patch" msgid="4794276590178386903">"Անվտանգության համակարգի վերջին թարմացումը"</string>
     <string name="model_info" msgid="4966408071657934452">"Մոդել"</string>
     <string name="baseband_version" msgid="2370088062235041897">"Baseband-ի տարբերակը"</string>
     <string name="kernel_version" msgid="7327212934187011508">"Միջուկի տարբերակը"</string>

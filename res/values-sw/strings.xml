@@ -283,9 +283,11 @@
     <string name="not_installed" msgid="4218816013370552746">"Haijasakinishwa kwa ajili ya mtumiaji huyu"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Ruhusa"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Arifa"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"Nafasi ya hifadhi na akiba"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Toleo: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Hakuna ruhusa zilizotolewa"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"Hakuna ruhusa zilizoombwa"</string>
+    <string name="storage_type_internal" msgid="8918688427078709570">"%s katika hifadhi ya mfumo"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Matumizi ya data"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Matumizi ya data ya programu"</string>
     <string name="computing_size" msgid="5791407621793083965">"Inahesabu…"</string>
@@ -353,7 +355,7 @@
     <string name="system_setting_title" msgid="6864599341809463440">"Mfumo"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Masasisho ya mfumo"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Toleo la Android"</string>
-    <string name="security_patch" msgid="4794276590178386903">"Kiwango cha rekebisho la usalama kwenye Android"</string>
+    <string name="security_patch" msgid="4794276590178386903">"Usasishaji wa rekebisho la usalama kwenye Android"</string>
     <string name="model_info" msgid="4966408071657934452">"Muundo"</string>
     <string name="baseband_version" msgid="2370088062235041897">"Toleo la mitambo ya redio"</string>
     <string name="kernel_version" msgid="7327212934187011508">"Toleo la kiini"</string>
