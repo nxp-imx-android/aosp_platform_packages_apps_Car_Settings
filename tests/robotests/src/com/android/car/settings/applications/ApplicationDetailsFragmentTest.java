@@ -16,6 +16,8 @@
 
 package com.android.car.settings.applications;
 
+import static com.android.car.ui.core.CarUi.requireToolbar;
+
 import static com.google.common.truth.Truth.assertThat;
 
 import android.app.Activity;
@@ -50,7 +52,7 @@ import com.android.car.settings.testutils.ShadowUserManager;
 import com.android.car.settings.testutils.ShadowUtils;
 import com.android.car.ui.core.testsupport.CarUiInstallerRobolectric;
 import com.android.car.ui.toolbar.MenuItem;
-import com.android.car.ui.toolbar.Toolbar;
+import com.android.car.ui.toolbar.ToolbarController;
 import com.android.settingslib.Utils;
 import com.android.settingslib.applications.ApplicationsState;
 
@@ -101,14 +103,14 @@ public class ApplicationDetailsFragmentTest {
         getShadowUserManager().addUser(userId, "userName", /* flags= */ 0);
         getShadowUserManager().addProfile(userId, userId, "profileName", /* profileFlags= */ 0);
 
+        // Needed to install Install CarUiLib BaseLayouts Toolbar for test activity
+        CarUiInstallerRobolectric.install();
+
         mActivity = new TestActivity();
         mController = ActivityController.of(mActivity);
         mController.create();
 
         mFragment = ApplicationDetailsFragment.getInstance(PACKAGE_NAME);
-
-        // Needed to install Install CarUiLib BaseLayouts Toolbar for test activity
-        CarUiInstallerRobolectric.install();
     }
 
     @After
@@ -538,7 +540,6 @@ public class ApplicationDetailsFragmentTest {
 
         Intent intent = ShadowApplication.getInstance().getNextStartedActivity();
         assertThat(intent.getAction()).isEqualTo(Intent.ACTION_UNINSTALL_PACKAGE);
-        assertThat(intent.getBooleanExtra(Intent.EXTRA_UNINSTALL_ALL_USERS, false)).isTrue();
         assertThat(intent.getBooleanExtra(Intent.EXTRA_RETURN_RESULT, false)).isTrue();
         assertThat(intent.getData().toString()).isEqualTo("package:" + PACKAGE_NAME);
     }
@@ -557,7 +558,7 @@ public class ApplicationDetailsFragmentTest {
     }
 
     private MenuItem findForceStopButton(Activity activity) {
-        Toolbar toolbar = activity.requireViewById(R.id.toolbar);
+        ToolbarController toolbar = requireToolbar(activity);
         return toolbar.getMenuItems().get(1);
     }
 
@@ -567,7 +568,7 @@ public class ApplicationDetailsFragmentTest {
     }
 
     private MenuItem findUninstallButton(Activity activity) {
-        Toolbar toolbar = activity.requireViewById(R.id.toolbar);
+        ToolbarController toolbar = requireToolbar(activity);
         return toolbar.getMenuItems().get(0);
     }
 
