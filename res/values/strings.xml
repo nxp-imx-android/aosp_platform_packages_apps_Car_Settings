@@ -599,12 +599,16 @@
     <string name="permissions_label">Permissions</string>
     <!-- Label for the toggle that enables/disables an app's notifications. [CHAR LIMIT=20] -->
     <string name="notifications_label">Notifications</string>
+    <!-- Label that lead into individual application storage info screen -->
+    <string name="storage_application_label">Storage &amp; cache</string>
     <!-- Label for displaying application version. -->
     <string name="application_version_label">Version: %1$s</string>
     <!-- Runtime permissions preference summary, shown when the app has no permissions granted. [CHAR LIMIT=40] -->
     <string name="runtime_permissions_summary_no_permissions_granted">No permissions granted</string>
     <!-- Runtime permissions preference summary, shown when the app requests no permissions. [CHAR LIMIT=40] -->
     <string name="runtime_permissions_summary_no_permissions_requested">No permissions requested</string>
+    <!-- Application's internal storage size preference summary. [CHAR LIMIT=40] -->
+    <string name="storage_type_internal">%s in internal storage</string>
     <!-- Activity title for network data usage summary. [CHAR LIMIT=25] -->
     <string name="data_usage_summary_title">Data usage</string>
     <!-- Activity title for Appk data usage summary. [CHAR LIMIT=25] -->
@@ -728,20 +732,8 @@
     <string name="location_settings_recent_requests_empty_message">No recent location requests</string>
     <!-- Title of Location App-level Permissions setting [CHAR LIMIT=60] -->
     <string name="location_settings_app_permissions_title">App-level permissions</string>
-    <!-- Title of Location Scanning setting [CHAR LIMIT=60] -->
-    <string name="location_settings_scanning_title">Scanning</string>
     <!-- Title of Location Services category [CHAR LIMIT=60] -->
     <string name="location_settings_services_title">Location Services</string>
-
-    <!-- Location Scanning --><skip/>
-    <!-- Title of Wi-Fi scanning preference [CHAR LIMIT=60] -->
-    <string name="location_settings_wifi_scanning_title">Wi\u2011Fi scanning</string>
-    <!-- Summary of Wi-Fi scanning preference [CHAR LIMIT=240] -->
-    <string name="location_settings_wifi_scanning_summary">Allow apps and services to scan for Wi\u2011Fi networks at any time, even when Wi\u2011Fi is off. This can be used, for example, to improve location-based features and services.</string>
-    <!-- Title of Bluetooth scanning preference [CHAT LIMIT=60]-->
-    <string name="location_settings_bluetooth_scanning_title">Bluetooth scanning</string>
-    <!-- Summary of Bluetooth scanning preference [CHAR LIMIT=240] -->
-    <string name="location_settings_bluetooth_scanning_summary">Allow apps and services to scan for nearby devices at any time, even when Bluetooth is off. This can be used, for example, to improve location-based features and services.</string>
 
     <!-- System --><skip/>
     <!-- Main setting menu item to go into system settings -->
@@ -1146,6 +1138,10 @@
     <!-- Message when sync is currently failing [CHAR LIMIT=100] -->
     <string name="sync_is_failing">Sync is currently experiencing problems. It will be back shortly.</string>
 
+    <!-- Privacy --><skip/>
+    <!-- Title for settings that lead into Privacy settings [CHAR LIMIT=40] -->
+    <string name="privacy_settings_title">Privacy</string>
+
     <!-- security lock --><skip/>
     <!-- Title for security settings [CHAR LIMIT=20] -->
     <string name="security_settings_title">Security</string>
@@ -1431,7 +1427,7 @@
     <string name="suggestion_dismiss_button">DISMISS</string>
 
     <!-- Warn user that the action they are trying to perform is blocked while the car is in motion [CHAR LIMIT=60] -->
-    <string name="restricted_while_driving">Feature not available while driving.</string>
+    <string name="restricted_while_driving">Feature not available while driving</string>
     <!-- Warn user that adding a user is blocked while the car is in motion [CHAR LIMIT=60] -->
-    <string name="add_user_restricted_while_driving">Can\'t add user while driving.</string>
+    <string name="add_user_restricted_while_driving">Can\'t add user while driving</string>
 </resources>

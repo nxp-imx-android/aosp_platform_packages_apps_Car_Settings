@@ -28,6 +28,7 @@ import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceUtil;
 import com.android.car.settingslib.R;
 import com.android.car.settingslib.language.LanguagePickerUtils;
+import com.android.car.ui.preference.CarUiPreference;
 import com.android.internal.app.LocaleStore;
 import com.android.internal.app.SuggestedLocaleAdapter;
 
@@ -78,7 +79,7 @@ public class LocalePreferenceProvider {
      * @param listener the click listener registered to the language/locale preferences contained in
      *                 the base preference group
      */
-    public void populateBasePreference(PreferenceGroup base,
+    public void populateBasePreference(PreferenceGroup base, Set<String> ignorables,
             Preference.OnPreferenceClickListener listener) {
         /*
          * LocalePreferenceProvider can give elements to be represented in 2 ways. In the first
@@ -93,7 +94,7 @@ public class LocalePreferenceProvider {
          */
         PreferenceCategory category = null;
         for (int position = 0; position < mSuggestedLocaleAdapter.getCount(); position++) {
-            Preference preference = getPreference(position);
+            Preference preference = getPreference(position, ignorables);
             if (PreferenceUtil.checkPreferenceType(preference, PreferenceCategory.class)) {
                 category = (PreferenceCategory) preference;
                 base.addPreference(category);
@@ -112,7 +113,7 @@ public class LocalePreferenceProvider {
      * Constructs a PreferenceCategory or Preference with locale arguments based on the type of item
      * provided.
      */
-    private Preference getPreference(int position) {
+    private Preference getPreference(int position, Set<String> ignorables) {
         int type = mSuggestedLocaleAdapter.getItemViewType(position);
         switch (type) {
             case TYPE_HEADER_SUGGESTED:
@@ -125,8 +126,16 @@ public class LocalePreferenceProvider {
             case TYPE_LOCALE:
                 LocaleStore.LocaleInfo info =
                         (LocaleStore.LocaleInfo) mSuggestedLocaleAdapter.getItem(position);
-                Preference preference = new Preference(mContext);
+                CarUiPreference preference = new CarUiPreference(mContext);
                 preference.setTitle(info.getFullNameNative());
+                // Only locales with multiple sublocales needs to show the chevron, since in those
+                // cases, the user needs to navigate to the child fragment to select the sublocale.
+                Set<LocaleStore.LocaleInfo> subLocales = LocaleStore.getLevelLocales(
+                        mContext,
+                        ignorables,
+                        info,
+                        /* translatedOnly */ true);
+                preference.setShowChevron(subLocales.size() > 1);
                 LocaleUtil.setLocaleArgument(preference, info);
                 return preference;
             default:
