@@ -19,7 +19,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_label" msgid="5147911978211079839">"設定"</string>
     <string name="more_settings_label" msgid="3867559443480110616">"更多"</string>
-    <string name="display_settings" msgid="5325515247739279185">"顯示"</string>
+    <string name="display_settings" msgid="5325515247739279185">"螢幕"</string>
     <string name="brightness" msgid="2919605130898772866">"亮度"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"自動調校光暗"</string>
     <string name="auto_brightness_summary" msgid="4741887033140384352">"按環境光線優化亮度"</string>
@@ -153,7 +153,7 @@
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"請為 Wi-Fi 熱點至少選擇一個頻段："</string>
     <string name="tether_settings_title_all" msgid="4663704772599383169">"熱點和網絡共享"</string>
     <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"自動關閉熱點"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"如果未連接任何裝置，Wi‑Fi 熱點將會關閉"</string>
+    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"當沒有連接任何裝置時，Wi‑Fi 熱點就會關閉"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"「<xliff:g id="REQUESTER">%s</xliff:g>」要求開啟 Wi-Fi"</string>
     <string name="wifi_ask_disable" msgid="2949290055916181553">"「<xliff:g id="REQUESTER">%s</xliff:g>」要求關閉 Wi-Fi"</string>
     <string name="wifi_error" msgid="3105105447117289410">"錯誤"</string>
@@ -337,7 +337,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"取消"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"付費短訊存取權"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"付費短訊的費用可能高昂，並會增加您流動網絡供應商帳單的款項。如果您為應用程式開放權限，將可以透過該應用程式發送付費短訊。"</string>
-    <string name="usage_access_title" msgid="7153427122072303254">"使用情況存取權"</string>
+    <string name="usage_access_title" msgid="7153427122072303254">"使用紀錄存取權"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"使用記錄存取權允許應用程式追蹤您正在使用的其他應用程式和使用頻率，以及流動網絡供應商、語言設定和其他詳情。"</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Wi-Fi 控制"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"Wi-Fi 控制允許應用程式開啟或關閉 Wi-Fi，掃瞄和連線至 Wi-Fi 網絡、新增或移除網絡，或啟動僅限本機的熱點。"</string>
@@ -346,12 +346,7 @@
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"最近的位置資訊要求"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"最近沒有位置資訊要求"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"應用程式層級權限"</string>
-    <string name="location_settings_scanning_title" msgid="4253945869911300740">"掃瞄"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"定位服務"</string>
-    <string name="location_settings_wifi_scanning_title" msgid="8021558840074023719">"Wi-Fi 掃瞄"</string>
-    <string name="location_settings_wifi_scanning_summary" msgid="2116283960258671324">"允許應用程式和服務隨時掃瞄 Wi-Fi 網絡 (即使 Wi-Fi 已關閉)。此操作可用來改善適地性功能和服務。"</string>
-    <string name="location_settings_bluetooth_scanning_title" msgid="2969682902241932059">"藍牙掃瞄"</string>
-    <string name="location_settings_bluetooth_scanning_summary" msgid="9158101751700727062">"允許應用程式和服務隨時掃瞄附近的裝置 (即使藍牙功能已關閉)。此操作可用來改善適地性功能和服務。"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"系統"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"系統更新"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android 版本"</string>
@@ -532,6 +527,7 @@
     <string name="sync_button_sync_now" msgid="5767643057970371315">"立即同步"</string>
     <string name="sync_button_sync_cancel" msgid="7739510554513641393">"取消同步處理"</string>
     <string name="sync_is_failing" msgid="5766255460901806206">"同步處理目前發生問題，將於短時間內恢復。"</string>
+    <string name="privacy_settings_title" msgid="3150145262029229572">"私隱"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"安全性"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"螢幕鎖定"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"無"</string>
@@ -662,6 +658,6 @@
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"執行這項操作後，示範模式帳戶會刪除，而系統會回復原廠設定。所有使用者資料將會失去。"</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"結束示範模式"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"關閉"</string>
-    <string name="restricted_while_driving" msgid="6217369093121968299">"無法在駕駛時使用此功能。"</string>
-    <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"無法在駕駛時新增使用者。"</string>
+    <string name="restricted_while_driving" msgid="6587569249519274524">"無法在駕駛時使用此功能"</string>
+    <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"無法在駕駛時新增使用者"</string>
 </resources>

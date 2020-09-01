@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2020 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.location;
+package com.android.car.settings.privacy;
 
 import androidx.annotation.XmlRes;
 
@@ -22,13 +22,13 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.SettingsFragment;
 
 /**
- * Fragment that hosts Location Scanning settings.
+ * List of privacy features
  */
-public class LocationScanningFragment extends SettingsFragment {
+public class PrivacySettingsFragment extends SettingsFragment {
 
     @Override
     @XmlRes
     protected int getPreferenceScreenResId() {
-        return R.xml.location_scanning_fragment;
+        return R.xml.privacy_settings_fragment;
     }
 }

@@ -51,7 +51,7 @@
     <string name="roaming_summary" msgid="7476127740259728901">"ローミング中にデータサービスに接続する"</string>
     <string name="roaming_alert_title" msgid="4433901635766775763">"データ ローミングを許可しますか？"</string>
     <string name="roaming_warning" msgid="5313281900566657209">"高額な通信料が発生することがあります。"</string>
-    <string name="data_usage_settings" msgid="7877132994777987848">"データ使用"</string>
+    <string name="data_usage_settings" msgid="7877132994777987848">"データ使用量"</string>
     <string name="data_usage_title" msgid="2923515974389203812">"メインデータ"</string>
     <string name="data_used_formatted" msgid="6684557577780068339">"<xliff:g id="ID_1">^1</xliff:g> <xliff:g id="ID_2">^2</xliff:g> 使用"</string>
     <string name="cell_data_warning" msgid="8997739664336571149">"データ警告: <xliff:g id="ID_1">^1</xliff:g>"</string>
@@ -142,8 +142,8 @@
     <string name="wifi_hotspot_security_title" msgid="2299925790743587725">"セキュリティ"</string>
     <string name="wifi_hotspot_wpa2_personal" msgid="7135181212837798318">"WPA2-Personal"</string>
     <string name="wifi_hotspot_security_none" msgid="2514844105085054386">"なし"</string>
-    <string name="wifi_hotspot_ap_band_title" msgid="7685279281668988593">"AP 帯域幅"</string>
-    <string name="wifi_ap_band_config" msgid="6143905484067008736">"AP 帯域幅の選択"</string>
+    <string name="wifi_hotspot_ap_band_title" msgid="7685279281668988593">"AP 周波数帯"</string>
+    <string name="wifi_ap_band_config" msgid="6143905484067008736">"AP 周波数帯の選択"</string>
     <string name="wifi_ap_choose_auto" msgid="3779526909841604566">"自動"</string>
     <string name="wifi_ap_choose_2G" msgid="6356913773766753502">"2.4 GHz 帯"</string>
     <string name="wifi_ap_choose_5G" msgid="8561440488455528673">"5.0 GHz 帯"</string>
@@ -325,8 +325,8 @@
     <string name="app_link_open_never" msgid="2173174327831792316">"このアプリで開かない"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"対応リンク"</string>
     <string name="special_access" msgid="5730278220917123811">"特別なアプリアクセス"</string>
-    <string name="show_system" msgid="4401355756969485287">"システムを表示"</string>
-    <string name="hide_system" msgid="8845453295584638040">"システムを表示しない"</string>
+    <string name="show_system" msgid="4401355756969485287">"システムアプリを表示"</string>
+    <string name="hide_system" msgid="8845453295584638040">"システムアプリを表示しない"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"システム設定の変更"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"この権限により、アプリはシステム設定を変更できるようになります。"</string>
     <string name="notification_access_title" msgid="1467340098885813473">"通知へのアクセス"</string>
@@ -346,12 +346,7 @@
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"最近の位置情報リクエスト"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"最近の位置情報リクエストはありません"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"アプリレベルの権限"</string>
-    <string name="location_settings_scanning_title" msgid="4253945869911300740">"スキャン"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"位置情報サービス"</string>
-    <string name="location_settings_wifi_scanning_title" msgid="8021558840074023719">"Wi‑Fi のスキャン"</string>
-    <string name="location_settings_wifi_scanning_summary" msgid="2116283960258671324">"アプリやサービスに対し、Wi‑Fi が OFF の場合でも、常に Wi-Fi ネットワークをスキャンすることを許可します。たとえば、位置情報を使用する機能やサービスの改善に役立ちます。"</string>
-    <string name="location_settings_bluetooth_scanning_title" msgid="2969682902241932059">"Bluetooth のスキャン"</string>
-    <string name="location_settings_bluetooth_scanning_summary" msgid="9158101751700727062">"アプリやサービスに対し、Bluetooth が OFF の場合でも、常に付近のデバイスをスキャンすることを許可します。たとえば、位置情報を使用する機能やサービスの改善に役立ちます。"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"システム"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"システム アップデート"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android のバージョン"</string>
@@ -369,7 +364,7 @@
     <string name="about_settings" msgid="4329457966672592345">"Android Auto について"</string>
     <string name="about_summary" msgid="5374623866267691206">"Android <xliff:g id="VERSION">%1$s</xliff:g>"</string>
     <string name="about_settings_summary" msgid="7975072809083281401">"規約、ステータス、ソフトウェア バージョンを表示"</string>
-    <string name="legal_information" msgid="1838443759229784762">"規約"</string>
+    <string name="legal_information" msgid="1838443759229784762">"法的情報"</string>
     <string name="contributors_title" msgid="7698463793409916113">"アライアンス パートナー"</string>
     <string name="manual" msgid="4819839169843240804">"マニュアル"</string>
     <string name="regulatory_labels" msgid="3165587388499646779">"規制ラベル"</string>
@@ -440,7 +435,7 @@
     <string name="date_picker_title" msgid="1533614225273770178">"日付"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"時刻"</string>
     <string name="user_admin" msgid="1535484812908584809">"管理者"</string>
-    <string name="signed_in_admin_user" msgid="1267225622818673274">"管理者としてログインしました"</string>
+    <string name="signed_in_admin_user" msgid="1267225622818673274">"管理者としてログイン済み"</string>
     <string name="grant_admin_permissions_title" msgid="4628430467359951437">"すべての管理者権限"</string>
     <string name="grant_admin_permissions_button_text" msgid="988239414372882401">"管理者にする"</string>
     <string name="grant_admin_permissions_message" msgid="1751910369004774830">"このユーザーは、他の管理者を含むユーザーの削除、システムデータの初期化を行えるようになります。"</string>
@@ -532,6 +527,7 @@
     <string name="sync_button_sync_now" msgid="5767643057970371315">"今すぐ同期"</string>
     <string name="sync_button_sync_cancel" msgid="7739510554513641393">"同期をキャンセル"</string>
     <string name="sync_is_failing" msgid="5766255460901806206">"現在同期で問題が発生しています。しばらくお待ちください。"</string>
+    <string name="privacy_settings_title" msgid="3150145262029229572">"プライバシー"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"セキュリティ"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"画面ロック"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"なし"</string>
@@ -662,6 +658,6 @@
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"デモアカウントが削除され、システムが出荷時の設定にリセットされます。すべてのユーザーデータは失われます。"</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"デモを終了"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"閉じる"</string>
-    <string name="restricted_while_driving" msgid="6217369093121968299">"この機能は運転中は利用できません。"</string>
-    <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"運転中はユーザーを追加できません。"</string>
+    <string name="restricted_while_driving" msgid="6587569249519274524">"この機能は運転中は利用できません"</string>
+    <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"運転中はユーザーを追加できません"</string>
 </resources>

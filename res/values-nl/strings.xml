@@ -346,12 +346,7 @@
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Recente locatieverzoeken"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Geen recente locatieverzoeken"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Rechten op app-niveau"</string>
-    <string name="location_settings_scanning_title" msgid="4253945869911300740">"Scannen"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Locatieservices"</string>
-    <string name="location_settings_wifi_scanning_title" msgid="8021558840074023719">"Wifi-scannen"</string>
-    <string name="location_settings_wifi_scanning_summary" msgid="2116283960258671324">"Apps en services toestaan altijd te scannen naar wifi-netwerken in de buurt, zelfs als wifi is uitgeschakeld. Dit kan bijvoorbeeld worden gebruikt om locatiegebaseerde functies en services te verbeteren."</string>
-    <string name="location_settings_bluetooth_scanning_title" msgid="2969682902241932059">"Bluetooth-scannen"</string>
-    <string name="location_settings_bluetooth_scanning_summary" msgid="9158101751700727062">"Apps en services toestaan altijd te scannen naar apparaten in de buurt, zelfs als Bluetooth is uitgeschakeld. Dit kan bijvoorbeeld worden gebruikt om locatiegebaseerde functies en services te verbeteren."</string>
     <string name="system_setting_title" msgid="6864599341809463440">"Systeem"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Systeemupdates"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android-versie"</string>
@@ -454,7 +449,7 @@
     <string name="user_add_user_menu" msgid="5319151436895941496">"Gebruiker toevoegen"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Nieuwe gebruiker"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Nieuwe gebruiker?"</string>
-    <string name="user_add_user_message_setup" msgid="6030901156040053106">"Wanneer je een nieuwe gebruiker toevoegt, moet die persoon zijn eigen profiel instellen."</string>
+    <string name="user_add_user_message_setup" msgid="6030901156040053106">"Wanneer je een nieuwe gebruiker toevoegt, moet die persoon een eigen profiel instellen."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Elke gebruiker kan apps updaten voor alle andere gebruikers"</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Gebruikerslimiet bereikt"</string>
     <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
@@ -532,13 +527,14 @@
     <string name="sync_button_sync_now" msgid="5767643057970371315">"Nu synchroniseren"</string>
     <string name="sync_button_sync_cancel" msgid="7739510554513641393">"Synchronisatie annuleren"</string>
     <string name="sync_is_failing" msgid="5766255460901806206">"Er zijn momenteel problemen met de synchronisatie. Synchronisatie wordt snel opnieuw uitgevoerd."</string>
+    <string name="privacy_settings_title" msgid="3150145262029229572">"Privacy"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Beveiliging"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Schermvergrendeling"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Geen"</string>
     <string name="security_lock_pattern" msgid="1174352995619563104">"Patroon"</string>
     <string name="security_lock_pin" msgid="4891899974369503200">"Pincode"</string>
     <string name="security_lock_password" msgid="4420203740048322494">"Wachtwoord"</string>
-    <string name="lock_settings_picker_title" msgid="6590330165050361632">"Vergrend.type kiezen"</string>
+    <string name="lock_settings_picker_title" msgid="6590330165050361632">"Vergrendeling kiezen"</string>
     <string name="screen_lock_options" msgid="8531177937577168185">"Vergrendelingsopties"</string>
     <string name="lock_settings_enter_pattern" msgid="4826034565853171624">"Geef je patroon op"</string>
     <string name="lockpattern_confirm_button_text" msgid="7784925958324484965">"Bevestigen"</string>
@@ -662,6 +658,6 @@
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Hiermee wordt het demo-account verwijderd en wordt het systeem teruggezet op de fabrieksinstellingen. Alle gebruikersgegevens gaan verloren."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Demo afsluiten"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"SLUITEN"</string>
-    <string name="restricted_while_driving" msgid="6217369093121968299">"Functie niet beschikbaar tijdens het rijden."</string>
-    <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Kan geen gebruikers toevoegen tijdens het rijden."</string>
+    <string name="restricted_while_driving" msgid="6587569249519274524">"Functie niet beschikbaar tijdens het rijden"</string>
+    <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"Kan geen gebruikers toevoegen tijdens het rijden"</string>
 </resources>
