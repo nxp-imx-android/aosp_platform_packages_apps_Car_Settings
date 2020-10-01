@@ -18,8 +18,8 @@ package com.android.car.settings.system;
 
 import android.content.Context;
 
+import com.android.car.settings.common.AsyncLoader;
 import com.android.car.settings.common.Logger;
-import com.android.car.settingslib.loader.AsyncLoader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -35,7 +35,13 @@ public class LicenseHtmlLoader extends AsyncLoader<File> {
             "/system/etc/NOTICE.xml.gz",
             "/vendor/etc/NOTICE.xml.gz",
             "/odm/etc/NOTICE.xml.gz",
-            "/oem/etc/NOTICE.xml.gz"};
+            "/oem/etc/NOTICE.xml.gz",
+            "/product/etc/NOTICE.xml.gz",
+            "/system_ext/etc/NOTICE.xml.gz",
+            "/vendor_dlkm/etc/NOTICE.xml.gz",
+            "/odm_dlkm/etc/NOTICE.xml.gz",
+    };
+
     private static final String NOTICE_HTML_FILE_NAME = "NOTICE.html";
 
     private final Context mContext;
